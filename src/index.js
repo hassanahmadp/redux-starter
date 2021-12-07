@@ -1,15 +1,16 @@
-// import { Map } from "immutable";
-import { produce } from "immer";
 
-let book = { title: "Harry Potter" };
-function publish(book) {
-  //   book.isPublished = true;
-  return produce(book, draftBook => {
-    draftBook.isPublished = true;
-  });
-}
+import { bugAdded, bugRemoved, bugResolved } from "./actions";
+import store from "./store";
 
-let updatedBook = publish(book);
+// const unsubscribe = store.subscribe(() => {
+//   console.log('store changed!', store.getState());
+// })
 
-console.log("book", book);
-console.log("updatedBook", updatedBook);
+store.dispatch(bugAdded('this is bug 1'))
+
+// unsubscribe();
+
+// store.dispatch(bugRemoved(2))
+store.dispatch(bugResolved(1))
+
+console.log(store.getState());
