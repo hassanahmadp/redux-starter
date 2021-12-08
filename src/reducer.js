@@ -14,17 +14,15 @@ export default function reducer(state = [], action) {
                     resolved: false
                 }
             ];
-            break;
         case actions.BUG_REMOVED:
             return state.filter(bug => bug.id !== action.payload.id)
-            break
+
         case actions.BUG_RESOLVED:
             return state.map(bug =>
                 bug.id === action.payload.id ? { ...bug, resolved: true } : bug
             )
-            break
         default:
             return state
-            break;
+
     }
 }
