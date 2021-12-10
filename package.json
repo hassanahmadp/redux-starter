@@ -19,6 +19,6 @@
     "immutable": "^4.0.0",
     "lodash": "^4.17.21",
     "redux": "4.0",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.9"
   }
 }
