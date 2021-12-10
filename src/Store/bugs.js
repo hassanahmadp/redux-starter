@@ -1,7 +1,13 @@
+import { createAction } from "@reduxjs/toolkit";
+const action = createAction('bugUpdated');
+console.log('----action----', action);
+
+// Action Types
 const BUG_ADDED = "bugAdded";
 const BUG_REMOVED = "bugRemoved";
 const BUG_RESOLVED = "bugResolved";
 
+// Action Creators
 export const bugAdded = description => ({
     type: BUG_ADDED,
     payload: {
@@ -21,6 +27,8 @@ export const bugResolved = (id) => ({
     }
 })
 
+
+// Reducer
 let lastId = 0;
 
 export default function reducer(state = [], action) {
